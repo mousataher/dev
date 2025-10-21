@@ -1,15 +1,27 @@
-# What is this?
+# Arabdic — مشروع Flutter جاهز (Android & iOS)
 
-The github.dev web-based editor is a lightweight editing experience that runs entirely in your browser. You can navigate files and source code repositories from GitHub, and make and commit code changes.
+## التشغيل محليًا
+```
+flutter pub get
+flutter run
+```
 
-There are two ways to go directly to a VS Code environment in your browser and start coding:
+> إذا لم تكن مجلدات المنصات موجودة على جهازك:
+```
+flutter create .
+```
 
-* Press the . key on any repository or pull request.
-* Swap `.com` with `.dev` in the URL. For example, this repo https://github.com/github/dev becomes http://github.dev/github/dev
+## البناء عبر GitHub Actions (ملفات جاهزة للتثبيت)
+### Android — APK
+1) ارفع مجلد المشروع إلى مستودع GitHub جديد
+2) افتح تبويب **Actions** وشغّل **Build Android APK**
+3) حمّل Artifact: `arabdic-android-apk` (ملف `app-release.apk`)
 
-Preview the gif below to get a quick demo of github.dev in action.
+### iOS — TestFlight (يلزم حساب Apple Developer)
+- أضف Secrets إلى GitHub:
+  - `APP_STORE_CONNECT_API_KEY_ID`
+  - `APP_STORE_CONNECT_API_KEY_ISSUER_ID`
+  - `APP_STORE_CONNECT_API_PRIVATE_KEY`
+  - `APP_BUNDLE_ID` (مثل: com.yourname.arabdic)
+- شغّل **iOS TestFlight Upload** وسيُرفع البناء إلى TestFlight.
 
-![github dev](https://user-images.githubusercontent.com/856858/130119109-4769f2d7-9027-4bc4-a38c-10f297499e8f.gif)
-
-# Why?
-It’s a quick way to edit and navigate code. It's especially useful if you want to edit multiple files at a time or take advantage of all the powerful code editing features of Visual Studio Code when making a quick change. For more information, see our [documentation](https://github.co/codespaces-editor-help).
